@@ -18,10 +18,10 @@ CREATE TABLE properties (
   description TEXT NOT NULL,
   thumbnail_photo_url TEXT NOT NULL,
   cover_photo_url TEXT NOT NULL,
-  cost_per_night SMALLINT NOT NULL,
-  parking_spaces SMALLINT NOT NULL,
-  number_of_bathrooms SMALLINT NOT NULL,
-  number_of_bedrooms SMALLINT NOT NULL,
+  cost_per_night INTEGER NOT NULL,
+  parking_spaces INTEGER NOT NULL,
+  number_of_bathrooms INTEGER NOT NULL,
+  number_of_bedrooms INTEGER NOT NULL,
   country TEXT NOT NULL,
   street TEXT NOT NULL,
   city TEXT NOT NULL,
@@ -43,6 +43,6 @@ CREATE TABLE property_reviews (
   guest_id INTEGER NOT NULL REFERENCES users(id),
   reservation_id INTEGER NOT NULL REFERENCES reservations(id),
   property_id INTEGER NOT NULL REFERENCES properties(id),
-  rating SMALLINT NOT NULL,
+  rating INTEGER NOT NULL,
   message TEXT NOT NULL
 );
