@@ -82,13 +82,11 @@ exports.getAllReservations = getAllReservations;
 // }
 
 const getAllProperties = function(options, limit = 10) {
-  pool.query(`
+  return pool.query(`
   SELECT * FROM properties
   LIMIT $1
   `, [limit])
-  .then(res => {
-    console.log(res.rows)
-  });
+  .then(res => res.rows);
 }
 exports.getAllProperties = getAllProperties;
 
